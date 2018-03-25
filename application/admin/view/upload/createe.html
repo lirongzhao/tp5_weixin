@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">添加消息</h3>
+    </div>
+    <div class="panel-body">
+        <form action="/admin/upload" method="post" enctype="multipart/form-data" >
+            <div>选择图片:<input type="file" name="photo"></div>
+            <div>&nbsp;</div>
+            <div>标题:&nbsp;&nbsp;<input type='text' name="title"></div>
+            <div>&nbsp;</div>
+            <div>作者:&nbsp;&nbsp;<input type='text' name="author"></div>
+            <div>&nbsp;</div>
+            <!--<div> 内容:<input type='text' name="content"></div>-->
+            <div>内容：<textarea name="content" rows="3" cols="28"></textarea></div>
+            <div>&nbsp;</div>
+            <div>
+                <input type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>

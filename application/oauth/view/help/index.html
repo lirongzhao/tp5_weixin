@@ -1,0 +1,50 @@
+<!DOCTYPE html><html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link href="http://test.wywwwxm.com/fdflex.min.css" rel="stylesheet" type="text/css">
+    <style>
+      .container{
+        width:100%;
+        overflow-x:hidden;
+      }
+    </style>
+    <title> 个人问题中心</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <table>
+            <tr>
+              <td>昵称:</td>
+              <td>{$view}</td>
+            </tr>
+            <tr>
+              <td>问题id</td>
+              <td>问题</td>
+              <td>回复</td>
+              <td>是否回复</td>
+            </tr>
+            {volist name="h" id='vo'}
+            <tr>
+              <td>{$vo->id}</td>
+              <td>{$vo->problem}</td>
+              <td>{$vo->reply}</td>
+              <td>
+              {if condition="$vo->status eq '1' "} 是
+              {elseif condition="$vo->status eq '0'"/}否
+              {/if}
+              </td>
+
+            </tr>
+            {/volist}
+          </table>
+          <div >
+               <a href="/tp5_weixin/public/index.php/oauth/help/create">提出问题</a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

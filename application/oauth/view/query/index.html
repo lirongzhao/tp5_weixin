@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table cellpadding="20" align="center">
+    <tr>
+        <th width="20px">id</th><th width="40px">问题</th><th width="40px">回答</th>
+    </tr>
+    {volist name="result" id='vo'}
+    <tr>
+        <td >{$vo['id']}</td>
+        <td>{$vo['problem']}</td>
+        <td>{$vo['reply']}</td>
+    </tr>
+    {/volist}
+</table>
+</body>
+</html>

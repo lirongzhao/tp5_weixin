@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">素材管理</h3>
+    </div>
+    <div class="panel-body">
+        <div class="panel-body">
+            <a href="/admin/material/create">添加素材</a>
+            <table class="table">
+                <tr><th>序号</th><th>类型</th><th>media_id</th><th>文件</th><th>添加时间</th><th>操作</th>
+                </tr>
+
+                {volist name="m" id="vo"}
+                <tr>
+                    <td>{$vo->id}</td>
+                    <td>{$vo->type}</td>
+                    <td>{$vo->media_id}</td>
+                    <!--<td>{$vo->url|mb_substr=0,20,'utf-8'}</td>-->
+                    <td><img src="{$vo->nurl}" alt="图片" width="100" height="50"/></td>
+                    <td>{$vo->create_time}</td>
+                 <td>
+                    <a href="/admin/material/{$vo->id}" onclick="deleteNews(this);return false;">删除</a>
+                </td>
+                </tr>
+                {/volist}
+            </table>
+            <ul class="pagination">
+                {$m->render()}
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+        function deleteNews(obj){
+            if(confirm('您确认删除吗')){
+                $.ajax({
+                    url:$(obj).attr('href'),
+                    type:"DELETE",
+                    success:function(data){
+                        if(data =="ok"){
+                            //alert('删除成功');
+
+                            obj.parentNode.parentNode.parentNode.removeChild(obj.parentNode.parentNode);
+                        }else{alert('删除失败');}
+                    }
+                });
+            }
+        }
+</script>

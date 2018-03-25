@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">添加素材</h3>
+    </div>
+    <div class="panel-body">
+        <form action="/admin/material" method="post" enctype="multipart/form-data" >
+            <div>
+                素材类型：
+                <input type="radio" name="type" value="image" checked>image
+                <input type="radio" name="type" value="voice">voice
+                <input type="radio" name="type" value="video">video
+                <input type="radio" name="type" value="thumb">thumb
+            </div>
+            <div>&nbsp;</div>
+            <div>
+                素材描述：&nbsp;&nbsp;
+
+                <textarea name="introduction" rows="3" cols="28"></textarea>
+            </div>
+            <div>&nbsp;</div>
+           <input type="file" name="file"><br/>
+            <div>
+
+                <input type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>

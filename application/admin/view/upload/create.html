@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">添加消息</h3>
+    </div>
+    <div class="panel-body">
+        <form action="/admin/upload" method="post" enctype="multipart/form-data" >
+            <div>上传缩略图:</div><div>&nbsp;</div><input type="file" name="photo"></div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;&nbsp;标题:&nbsp;&nbsp;<input type='text' name="title"></div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;&nbsp;作者:&nbsp;&nbsp;<input type='text' name="author"></div>
+            <div>&nbsp;</div>
+            <!--<div> 内容:<input type='text' name="content"></div>-->
+            <div>&nbsp;&nbsp;&nbsp;内容：<textarea name="content" rows="3" cols="28"></textarea></div>
+            <div>&nbsp;</div>
+            <div>
+                &nbsp;&nbsp;&nbsp;<input type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function deleteNews(obj)
+    {
+            $.ajax({
+                url: $(obj).attr('href'),
+                type: "DELETE",
+                success: function(data) {
+                    if (data == "ok") {
+                        // alert('删除成功！');
+                        // 在页面中删除这个记录
+                        obj.parentNode.parentNode.parentNode.removeChild(obj.parentNode.parentNode);
+                    } else {
+                        alert('删除失败！');
+                    }
+                }
+            });
+
+    }
+</script>

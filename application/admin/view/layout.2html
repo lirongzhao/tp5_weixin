@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="topbar-logo-wrap clearfix">
+            <h1 class="topbar-logo none"><a href="layout.html" class="navbar-brand">微信后台管理</a></h1>
+            <ul class="navbar-list clearfix">
+                <li><a class="on" href="{/admin}">首页</a></li>
+                <li><a href="#" target="_blank">网站首页</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="container clearfix">
+    <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1></h1>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                    <a href="/admin/upload"><i class="icon-font">&#xe003;</i>消息</a>
+                    <ul class="sub-menu">
+                        <li><a href="/admin/upload"><i class="icon-font">&#xe008;</i>消息管理</a></li>
+                        <li><a href="/admin/upload/create"><i class="icon-font">&#xe008;</i>添加消息</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="/admin/material"><i class="icon-font">&#xe018;</i>素材</a>
+                    <ul class="sub-menu">
+                        <li><a href="/admin/material"><i class="icon-font">&#xe017;</i>素材管理</a></li>
+                        <li><a href="/admin/material/create"><i class="icon-font">&#xe037;</i>添加素材</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/admin/help"><i class="icon-font">&#xe018;</i>用户问题</a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!--/sidebar-->
+    {__CONTENT__}
+    <!--/main-->
+</div>
+</body>
+</html>
